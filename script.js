@@ -56,7 +56,20 @@ Example: isCharAVowel('a') should return true.
 Complete the exercise in the space below:
 */
 
+function isCharAVowel(char){
 
+    if (char === 'a' || 'o' || 'i' || 'u' || 'e' ) {
+
+        return true
+    }
+
+   else{
+
+        return false
+   }
+
+    
+}
 
 console.log('Exercise 3 Result:', isCharAVowel("a"));
 
@@ -74,9 +87,12 @@ should return 'johnsmith@example.com'.
 Complete the exercise in the space below:
 */
 
+   function generateEmail(str1, str2){
 
+        return str1 +"@"+str2
+   }
 
-//console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
+console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
 
 
 
@@ -93,9 +109,21 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 Complete the exercise in the space below:
 */
 
+        function greetUser(name,time){
 
+                if (time === "morning"){
+                return "Good morning, " + name
+                }
+                if (time === "afternoon"){
+                    return "Good afternoon, " + name
+                }
+                if (time === "evening"){
+                    return "Good evening, " + name
+                }
 
-//console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
+        }
+
+        console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
 
 
 
@@ -110,9 +138,23 @@ Example: maxOfThree(17, 4, 9) should return 17.
 Complete the exercise in the space below:
 */
 
+            function maxOfThree(num1,num2,num3){
+                var  max =0;
+                if(num1 >num2 && num3 ){
+                    max = num1
+                }
+                else if(num2 >num1 && num3 ){
+                    max = num2
+                }
 
+                else if(num3 >num1 && num2 ){
+                    max = num3
+                }
+                return max
 
-//console.log('Exercise 6 Result:', maxOfThree(5, 10, 8));
+            }
+
+console.log('Exercise 6 Result:', maxOfThree(5, 15, 8));
 
 
 
@@ -128,6 +170,84 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 
+        function calculateTip(BA, trip){
+
+            let amount = trip / 100;
+            let tipAmount = BA * amount;
+        
+            return tipAmount;
+                    return 
+        }
 
 
-//console.log('Exercise 7 Result:', calculateTip(50, 20));
+console.log('Exercise 7 Result:', calculateTip(50, 20));
+
+
+/*
+
+Exercise 8: convertTemperature()
+
+Write a function named convertTemperature. 
+It takes two arguments: a temperature and a string representing the 
+scale ('C' for Celsius, 'F' for Fahrenheit). 
+Convert the temperature to the other scale.
+
+Example: convertTemperature(32, 'C') should return 89.6 (Fahrenheit).
+Example: convertTemperature(32, 'F') should return 0 (Celsius).
+
+Complete the exercise in the space below:
+*/
+
+function convertTemperature(temperature, scale) {
+    if (scale === 'C') {
+        // Convert Celsius to Fahrenheit
+        return temperature * 9/5 + 32;
+    } else if (scale === 'F') {
+        // Convert Fahrenheit to Celsius
+        return (temperature - 32) * 5/9;
+    } else {
+        // Invalid scale provided
+        return "Invalid scale provided";
+    }
+}
+
+console.log('Exercise 8 Result:', convertTemperature(32, "C"));
+
+
+
+/*
+Exercise 9: basicCalculator()
+
+Create a function named basicCalculator. 
+It should take three arguments: two numbers and a string representing 
+an operation ('add', 'subtract', 'multiply', 'divide'). 
+Perform the provided operation on the two numbers. 
+In operations where the order of numbers is important, 
+treat the first parameter as the first operand and the 
+second parameter as the second operand.
+
+Example: basicCalculator(10, 5, 'subtract') should return 5.
+
+Complete the exercise in the space below:
+*/
+
+function basicCalculator(num1, num2, operation) {
+    switch(operation) {
+        case 'add':
+            return num1 + num2;
+        case 'subtract':
+            return num1 - num2;
+        case 'multiply':
+            return num1 * num2;
+        case 'divide':
+            if (num2 !== 0) {
+                return num1 / num2;
+            } else {
+                return "Error: Division by zero";
+            }
+        default:
+            return "Invalid operation";
+    }
+}
+
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
